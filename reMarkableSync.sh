@@ -15,8 +15,12 @@ rclone move nextcloud:/invia_a_marco/ /home/mm/reMarkable-autosync/Sincronizza/
 
 for f in *\ *; do mv "$f" "${f// /_}" 2> /dev/null; done
 
-mv *.PDF *.pdf 2> /dev/null
-mv *.ZIP *.zip 2> /dev/null
+for f in *; do
+    test -f "$f" && mv "$f" "${f,,}"
+done
+
+#mv *.PDF *.pdf #2> /dev/null
+#mv *.ZIP *.zip #2> /dev/null
 
 for filename in /home/mm/reMarkable-autosync/Sincronizza/*.zip; do
 
@@ -28,7 +32,7 @@ for filename in /home/mm/reMarkable-autosync/Sincronizza/*.zip; do
 
 done
 
-cd /home/mm/remarkable
+cd /home/mm/reMarkable-autosync/
 
 for filename in /home/mm/reMarkable-autosync/Sincronizza/*.pdf; do
 
