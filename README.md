@@ -1,5 +1,6 @@
 # reMarkable-autosync
-Sync a Nextcloud folder with reMarkable automagically
+Sync a Nextcloud / Ownclowd / Dropbox / Google Drive folder with reMarkable automagically [2]
+
 
 Needed:
 
@@ -16,7 +17,7 @@ For reMarkable API ( Splitbrain )
 * rclone ( apt install rclone )
 * nextcloud (or other service compatible with rclone)
 
-Create a nextcloud directory for import (/invia_a_marco in the example) and one for export (/scartati_da_marco in the example)
+Create a nextcloud / ownlcloud / dropbox / gdrive directory for import (/invia_a_marco in the example) and one for export (/scartati_da_marco in the example)
 Create a cron in /etc/cron.d: "* * * * * user /home/user/remarkable/reMarkableSync.sh" (here, every minute)
 
 You'll have in /home/user/remarkable those files and dir
@@ -47,3 +48,58 @@ sudo apt install curl php-cli php-mbstring git unzip
 curl -sS https://getcomposer.org/installer -o composer-setup.php
 
 sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+
+
+----------------
+
+Works with:
+
+1Fichier  
+Alibaba Cloud (Aliyun) Object Storage System (OSS)  
+Amazon Drive   (See note)
+Amazon S3  
+Backblaze B2  
+Box  
+Ceph  
+Citrix ShareFile  
+C14  
+DigitalOcean Spaces  
+Dreamhost  
+Dropbox  
+FTP  
+Google Cloud Storage  
+Google Drive  
+Google Photos  
+HTTP  
+Hubic  
+Jottacloud  
+IBM COS S3  
+Koofr  
+Mail.ru Cloud  
+Memset Memstore  
+Mega  
+Memory  
+Microsoft Azure Blob Storage  
+Microsoft OneDrive  
+Minio  
+Nextcloud  
+OVH  
+OpenDrive  
+Openstack Swift  
+Oracle Cloud Storage  
+ownCloud  
+pCloud  
+premiumize.me  
+put.io  
+QingStor  
+Rackspace Cloud Files  
+rsync.net  
+Scaleway  
+SFTP  
+StackPath  
+SugarSync  
+Wasabi  
+WebDAV  
+Yandex Disk  
+The local filesystem  
