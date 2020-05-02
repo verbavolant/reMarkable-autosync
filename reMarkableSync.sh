@@ -19,8 +19,8 @@ for f in *; do
     test -f "$f" && mv "$f" "${f,,}"
 done
 
-#mv *.PDF *.pdf #2> /dev/null
-#mv *.ZIP *.zip #2> /dev/null
+mv *.PDF *.pdf 2> /dev/null
+mv *.ZIP *.zip 2> /dev/null
 
 for filename in /home/mm/reMarkable-autosync/Sincronizza/*.zip; do
 
@@ -39,7 +39,15 @@ for filename in /home/mm/reMarkable-autosync/Sincronizza/*.pdf; do
     [ -f "$filename" ] || continue
     basenamepdf="${filename##*/}"
     echo "elaboro il file $basenamepdf $filename"  >> /tmp/reMarkable.log
-    php /home/mm/reMarkable-autosync/remarkable.php upload "Sincronizza/$basenamepdf" Upload
+
+######################
+#uncomment for remarkable api
+#    php /home/mm/reMarkable-autosync/remarkable.php upload "Sincronizza/$basenamepdf" Upload
+
+#uncomment for rmapi
+    /home/mm/go/bin/rmapi put "Sincronizza/$basenamepdf" Upload
+######################
+
     sleep 5
     rm "Sincronizza/$basenamepdf"
     echo "$filename" >> /tmp/sincronizzati
