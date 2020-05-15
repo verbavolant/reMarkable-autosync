@@ -4,7 +4,7 @@ Sync a Nextcloud / Ownclowd / Dropbox / Google Drive folder with reMarkable auto
 
 Needed:
 
-For rmapy ( Stijn Van Campenhout ) i think better for pdf preview in reMarkable
+For rmapy ( https://github.com/juruen/rmapi ) i think better for pdf preview in reMarkable
 * golang installed ( apt install golang )
 
 For reMarkable API ( Splitbrain )
