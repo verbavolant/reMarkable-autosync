@@ -1,5 +1,5 @@
 #!/bin/bash
-# v1.2
+# v1.3
 
 if [[ -e "/tmp/reMarkableSync.pid" ]] ; then
     echo "another is running, exit"
@@ -33,6 +33,7 @@ for filename in /home/mm/reMarkable-autosync/Sincronizza/*.zip; do
 done
 
 cd /home/mm/reMarkable-autosync/
+test -f *.pdf && /home/mm/reMarkable-autosync/rmapi mkdir Upload/"$(date +"%d-%m-%Y")"
 
 for filename in /home/mm/reMarkable-autosync/Sincronizza/*.pdf; do
 
