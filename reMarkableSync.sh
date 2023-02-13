@@ -33,10 +33,10 @@ done
 mv *.PDF *.pdf 2> /dev/null
 mv *.ZIP *.zip 2> /dev/null
 
-cd /home/mm/reMarkable-autosync/
-test -f *.pdf && /home/mm/reMarkable-autosync/rmapi mkdir Upload/"$(date +"%d-%m-%Y")"
+cd /home/marco/reMarkable-autosync/
+test -f *.pdf && /home/marco/reMarkable-autosync/rmapi mkdir Upload/"$(date +"%d-%m-%Y")"
 
-for filename in /home/mm/reMarkable-autosync/Sincronizza/*.pdf; do
+for filename in /home/marco/reMarkable-autosync/Sincronizza/*.pdf; do
 
     [ -f "$filename" ] || continue
     basenamepdf="${filename##*/}"
@@ -57,7 +57,7 @@ for filename in /home/mm/reMarkable-autosync/Sincronizza/*.pdf; do
 
 done
 
-rclone move /home/mm/reMarkable-autosync/Sincronizza/ nextcloud:/scartati_da_marco/
+rclone move /home/marco/reMarkable-autosync/Sincronizza/ nextcloud:/scartati_da_marco/
 
 rm "/tmp/reMarkableSync.pid"
 
